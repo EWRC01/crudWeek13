@@ -6,7 +6,7 @@
 @include('livewire.create')
 @include('livewire.edit')
 @if (session()->has('message'))
-<hr/>
+
 <div class="alert alert-success alert-dismissible fade-show" role="alert">
 
 {{session('message')}}
@@ -29,6 +29,7 @@
 <th>Nota 2</th>
 <th>Nota 3</th>
 <th>Promedio</th>
+<th>Observaciones</th>
 <th>Acciones</th>
 
 </tr>
@@ -46,7 +47,17 @@
 <td>{{ $student->Score2 }}</td>
 <td>{{ $student->Score3 }}</td>
 
-<td>{{ round(($student->Score1 + $student->Score2 + $student->Score3)/3, 2)}}</td>
+<td>{{ $promedio=round(($student->Score1 + $student->Score2 + $student->Score3)/3, 2)}}</td>
+
+@if ($promedio >= 7)
+<td>Aprobado</td>
+@else
+<td>Necesita Mejorar</td>
+@endif
+
+
+
+
 <td><button class="btn btn-info text-white" data-toggle="modal" data-target="#myModalEdit" type="button" wire:click="edit({{$student -> id}})">Editar</button>
 <button class="btn btn-danger text-white" wire:click="delete({{$student -> id}})">Eliminar</button></td>
 
