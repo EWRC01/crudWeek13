@@ -8,7 +8,8 @@ use App\Models\Student;
 class Crud extends Component
 {
 
-    public $students, $firstName, $lastName, $Score1, $Score2, $Score3, $Sum , $student_id;
+    public $students, $firstName, $lastName, $Score1, $Score2, $Score3, $student_id;
+   
     public $updateMode = false;
     public $isOpen = 1;
     public $isOpenEdit = 0;
@@ -42,7 +43,7 @@ class Crud extends Component
         $this -> Score1 = '';
         $this -> Score2 = '';
         $this -> Score3 = '';
-        $this -> Sum = '';
+       
 
     }
 
@@ -53,7 +54,7 @@ class Crud extends Component
         'Score1'=>'required',
         'Score2'=>'required',
         'Score3'=>'required',
-        'Sum'=>'required'
+        
         ]);
     
 
@@ -79,7 +80,8 @@ class Crud extends Component
         $this->Score1=$student->Score1;
         $this->Score2=$student->Score2;
         $this->Score3=$student->Score3;
-        $this->Sum=$student->Sum;
+        
+        
        
 
     }
@@ -97,7 +99,7 @@ class Crud extends Component
         'Score1'=>'required',
         'Score2'=>'required',
         'Score3'=>'required',
-        'Sum'=>'required'
+        
         ]);
 
         if ($this->student_id) {
@@ -108,7 +110,7 @@ class Crud extends Component
                 'Score1' => $this->Score1,
                 'Score2' => $this->Score2,
                 'Score3' => $this->Score3,
-                'Sum' => $this->Sum
+                
 
 
             ]);

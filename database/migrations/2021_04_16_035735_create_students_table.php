@@ -20,7 +20,6 @@ class CreateStudentsTable extends Migration
             $table->integer('Score1');
             $table->integer('Score2');
             $table->integer('Score3');
-            $table->integer('Sum');
             $table->timestamps();
         });
     }

@@ -25,12 +25,6 @@
 <label class="form-label"  for="score3">Nota 3</label>
 <input class="form-control" type="number" id="score3" wire:model="Score3" placeholder="Ingrese la tercera nota">
 @error('Score3') <span class="text-danger">{{$message}}</span>@enderror
-
-<label class="form-label"  for="sum">Promedio</label>
-<input class="form-control" type="number" id="sum"  wire:model="Sum" placeholder="Ingrese el promedio">
-@error('Sum') <span class="text-danger">{{$message}}</span>@enderror
-
-
 </form>
       </div>
       <div class="modal-footer">

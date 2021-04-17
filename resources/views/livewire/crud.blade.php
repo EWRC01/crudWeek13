@@ -45,13 +45,10 @@
 <td>{{ $student->Score1 }}</td>
 <td>{{ $student->Score2 }}</td>
 <td>{{ $student->Score3 }}</td>
-<td>{{ $student->Sum }}</td>
-<td><button class="btn btn-info" data-toggle="modal" data-target="#myModalEdit" type="button" wire:click="edit({{$student -> id}})">Editar</button>
 
-
-
-
-<button class="btn btn-warning" wire:click="delete({{$student -> id}})">Eliminar</button></td>
+<td>{{ round(($student->Score1 + $student->Score2 + $student->Score3)/3, 2)}}</td>
+<td><button class="btn btn-info text-white" data-toggle="modal" data-target="#myModalEdit" type="button" wire:click="edit({{$student -> id}})">Editar</button>
+<button class="btn btn-danger text-white" wire:click="delete({{$student -> id}})">Eliminar</button></td>
 
 
 @endforeach
